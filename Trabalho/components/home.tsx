@@ -1,6 +1,9 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Sobre from './sobre';
+import Imagem1 from './Img/logo.png';
+import Imagem2 from './Img/principal.png';
+import Imagem3 from './Img/Daylocal.png';
 
 export default function App() {
     const [page, setPage] = React.useState('home');
@@ -9,10 +12,12 @@ export default function App() {
         if (page === 'home') {
         return (
       <View style={styles.container}>
-        <Text style={styles.title}>Página Principal</Text>
-        <Text style={styles.title}> Exemplo 1</Text>
+        <Image source={Imagem1}/>
+        <Image source={Imagem2}/>
+        <Text style={styles.title}> Onde quer que você vá, </Text>
+        <Text style={styles.title}>  o <Image source={Imagem3}/> te leva!</Text>
         <TouchableOpacity style ={styles.button} onPress={() => setPage ('sobre')}>
-        <Text style={styles.buttonText}>Clique aqui</Text>
+        <Text style={styles.buttonText}>ENTRAR</Text>
         </TouchableOpacity>
       </View>
     );    
@@ -38,7 +43,7 @@ export default function App() {
       color: '#000',
     },
     button: {
-      backgroundColor: '#007BFF',
+      backgroundColor: '#06B193',
       padding: 10,
       borderRadius: 5,
       fontSize: 16,

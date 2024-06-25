@@ -1,6 +1,10 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Home from './home';
+import Local from './Img/Local.png';
+import Imagem3 from './Img/Bolacima.png';
+import Baixo from './Img/Bolabaixo.png';
+import Diferencial from './Img/Diferencial.png';
 
 export default function App() {
     const [page, setPage] = React.useState('sobre');
@@ -9,10 +13,15 @@ export default function App() {
         if (page === 'sobre') {
         return (
       <View style={styles.container}>
-        <Text style={styles.title}>Página Sobre</Text>
+        <Image source={Imagem3}/>
+        <Image source={Local}/><br></br><br></br>
+        <Image source={Diferencial} style={styles.img}/> <br></br><br></br>
+        <Text style={styles.title}>Latitude: 0.00</Text>
+        <Text style={styles.title}>Longitude: 0.00</Text><br></br>
         <TouchableOpacity style ={styles.button} onPress={() => setPage ('home')}>
-        <Text style={styles.buttonText}>Clique aqui</Text>
+        <Text style={styles.buttonText}>OBTER LOCALIZAÇÃO</Text>
         </TouchableOpacity>
+        <Image source={Baixo} style={styles.img} />
       </View>
     );    
         } else if (page === 'home') {
@@ -29,7 +38,6 @@ export default function App() {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#fff',
     },
     title: {
       marginBottom: 20,
@@ -37,14 +45,21 @@ export default function App() {
       fontWeight: 'bold',
       color: '#000',
     },
+
     button: {
-      backgroundColor: '#007BFF',
+      backgroundColor: '#06B193',
       padding: 10,
-      borderRadius: 5,
-    },
-    buttonText: {
-      backgroundColor: '#FFFFFF',
+      width: 200,
+      borderRadius: 10,
       fontSize: 16,
     },
+    buttonText: {
+      color: '#FFFF',
+      fontSize: 16,
+      textAlign: 'center',
+    },
+
+    img: {
+      padding: 10,
+    },
   });
-  
